@@ -16,7 +16,7 @@ public class Ecommerce {
 	{
 		RestAssured.baseURI = baseurl;
 		String 	requestbody = "{\n"
-				+ "	\"email\": \"jar@gmail.com\",\n"
+				+ "	\"email\": \"hap@gmail.com\",\n"
 				+ "	\"password\": \"friday@123\"\n"
 				+ "}";
 		Response response = given()
@@ -39,12 +39,12 @@ public class Ecommerce {
 		
 		
 	}
-	@Test(priority = 1)
+	@Test(priority = 1, dependsOnMethods = "signup")
 	public void login()
 	{
 		RestAssured.baseURI = baseurl;
 		String 	requestbody = "{\n"
-				+ "	\"email\": \"jar@gmail.com\",\n"
+				+ "	\"email\": \"hap@gmail.com\",\n"
 				+ "	\"password\": \"friday@123\"\n"
 				+ "}";
 		Response response = given()
@@ -71,14 +71,14 @@ public class Ecommerce {
 		}
 	   
 	
-	@Test (priority=2)
+	@Test (priority=2 , dependsOnMethods = "login")
 	public void getusers()
 	{
 		RestAssured.baseURI = baseurl;
 		Response response = given().
 		//queryParam("Authorization","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMwYzI4ZTZhYjVjNjAwMTcyZmQxYjYiLCJpYXQiOjE2NDc0MDA4NTcsImV4cCI6MTY0NzQ4NzI1N30.ot3_lNRGpb-mvs1wnFWhpzKWOvQyr4lttgR2dwCda2Y")
 		 header("Content-Type","application/json")
-		.header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMwYzI4ZTZhYjVjNjAwMTcyZmQxYjYiLCJpYXQiOjE2NDc0MDA4NTcsImV4cCI6MTY0NzQ4NzI1N30.ot3_lNRGpb-mvs1wnFWhpzKWOvQyr4lttgR2dwCda2Y")
+		.header("Authorization", "bearer "+ accessToken)
 		.when()
 		.get("/user")
 		
@@ -91,14 +91,14 @@ public class Ecommerce {
 		JsonPath js = new JsonPath(jsonresponse);
 		id=js.get("users[100]._id");
 	}
-	@Test (priority=3)
+	@Test (priority=3 , dependsOnMethods = "login")
 	public void deleteuser()
 	{
 		RestAssured.baseURI = baseurl;
 		Response response = given().
 		//queryParam("Authorization","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMwYzI4ZTZhYjVjNjAwMTcyZmQxYjYiLCJpYXQiOjE2NDc0MDA4NTcsImV4cCI6MTY0NzQ4NzI1N30.ot3_lNRGpb-mvs1wnFWhpzKWOvQyr4lttgR2dwCda2Y")
 		 header("Content-Type","application/json")
-		.header("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMwYzI4ZTZhYjVjNjAwMTcyZmQxYjYiLCJpYXQiOjE2NDc0MDA4NTcsImV4cCI6MTY0NzQ4NzI1N30.ot3_lNRGpb-mvs1wnFWhpzKWOvQyr4lttgR2dwCda2Y")
+		.header("Authorization", "bearer "+ accessToken)
 		.when()
 		.delete("/user/" + id)
 		
