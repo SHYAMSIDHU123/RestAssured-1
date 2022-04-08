@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="mybrowser" value="firefox"/>
   <test name="Test">
+    <parameter name="mybrowser" value="chrome"/>
     <classes>
-      <class name="RestTesting.Ecommerce"/>
-      <class name="RestTesting.Trello"/>
+      <class name="Test.parallel"/>
     </classes>
   </test> <!-- Test -->
+  <test name="Test1">
+    <parameter name="mybrowser" value="firefox"/>
+    <classes>
+      <class name="Test.parallel"/>
+    </classes>
+  </test> <!-- Test1 -->
+  <test name="Test1(failed)" parallel="tests">
+    <parameter name="mybrowser" value="firefox"/>
+    <classes>
+      <class name="Test.parallel">
+        <methods>
+          <include name="testcase1"/>
+          <include name="BT"/>
+          <include name="BT"/>
+          <include name="AT"/>
+          <include name="AT"/>
+        </methods>
+      </class> <!-- Test.parallel -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test name="Test(failed)" parallel="tests">
+    <parameter name="mybrowser" value="chrome"/>
+    <classes>
+      <class name="Test.parallel">
+        <methods>
+          <include name="testcase1"/>
+          <include name="BT"/>
+          <include name="BT"/>
+          <include name="AT"/>
+          <include name="AT"/>
+        </methods>
+      </class> <!-- Test.parallel -->
+    </classes>
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

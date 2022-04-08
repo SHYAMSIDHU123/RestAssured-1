@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="4" passed="4" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-16T13:20:02Z" name="Default suite" finished-at="2022-03-16T13:20:19Z" duration-ms="17330">
+  <suite name="Default suite" duration-ms="456" started-at="2022-04-06T14:18:43Z" finished-at="2022-04-06T14:18:43Z">
     <groups>
     </groups>
-    <test started-at="2022-03-16T13:20:02Z" name="Default test" finished-at="2022-03-16T13:20:19Z" duration-ms="17330">
-      <class name="RestTesting.Ecommerce">
-        <test-method signature="signup()[pri:0, instance:RestTesting.Ecommerce@53251a66]" started-at="2022-03-16T18:50:02Z" name="signup" finished-at="2022-03-16T18:50:09Z" duration-ms="7514" status="PASS">
+    <test name="Default test" duration-ms="456" started-at="2022-04-06T14:18:43Z" finished-at="2022-04-06T14:18:43Z">
+      <class name="DDF.ddt1">
+        <test-method status="PASS" signature="testcase1()[pri:0, instance:DDF.ddt1@212bf671]" name="testcase1" duration-ms="425" started-at="2022-04-06T19:48:43Z" finished-at="2022-04-06T19:48:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signup -->
-        <test-method signature="login()[pri:1, instance:RestTesting.Ecommerce@53251a66]" started-at="2022-03-16T18:50:09Z" name="login" finished-at="2022-03-16T18:50:14Z" depends-on-methods="RestTesting.Ecommerce.signup" duration-ms="4096" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="getusers()[pri:2, instance:RestTesting.Ecommerce@53251a66]" started-at="2022-03-16T18:50:14Z" name="getusers" finished-at="2022-03-16T18:50:17Z" depends-on-methods="RestTesting.Ecommerce.login" duration-ms="3550" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getusers -->
-        <test-method signature="deleteuser()[pri:3, instance:RestTesting.Ecommerce@53251a66]" started-at="2022-03-16T18:50:17Z" name="deleteuser" finished-at="2022-03-16T18:50:19Z" depends-on-methods="RestTesting.Ecommerce.login" duration-ms="2143" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteuser -->
-      </class> <!-- RestTesting.Ecommerce -->
+        </test-method> <!-- testcase1 -->
+      </class> <!-- DDF.ddt1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
