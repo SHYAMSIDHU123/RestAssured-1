@@ -3,6 +3,7 @@
   <groupId>ApiTesting</groupId>
   <artifactId>RestAssuredTesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- team lead -->
 <build>
     <pluginManagement>
       <plugins>
