@@ -6,6 +6,11 @@
 <build>
     <pluginManagement>
       <plugins>
+        
+        
+        
+        
+        <!-- team lead -->
    
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
